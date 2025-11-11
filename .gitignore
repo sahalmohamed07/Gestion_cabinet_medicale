@@ -1,0 +1,18 @@
+# === GLOBAL ===
+.env
+*.log
+/.idea
+/.vscode
+
+# === BACKEND (laravel) ====
+back-end/vendor/
+back-end/storage/
+back-end/.env
+back-end/composer.lock
+
+
+# ===FRONT (angular) ===
+
+front-end/node-modules/
+front-end/dist/
+front-end/.angular/
