@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -18,9 +18,10 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'nom',
         'email',
         'password',
+        'role',
     ];
 
     /**
@@ -32,6 +33,22 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+
+
+    public function isAdmin(): bool
+    {
+        return $this->role === 'admin';
+    }
+
+    public function isMedecin(): bool
+    {
+        return $this->role === 'medecin';
+    }
+
+    public function isPatient(): bool
+    {
+        return $this->role === 'patient';
+    }
 
     /**
      * The attributes that should be cast.
