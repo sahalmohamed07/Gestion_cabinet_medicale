@@ -44,7 +44,7 @@ class UserController extends Controller
         }
 
         $data = $request->validate([
-            'name'     => 'sometimes|string|max:255',
+            'nom'     => 'sometimes|string|max:255',
             'email'    => 'sometimes|email|unique:users,email,' . $user->id,
             'password' => 'sometimes|string|min:6',
             'role'     => 'sometimes|string|in:admin,medecin,patient',

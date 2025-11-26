@@ -16,10 +16,15 @@ return new class extends Migration
             $table->string('nom');
             $table->string('prenom');
             $table->date('date_naissance');
-            $table->string('sexe')->nullable();
+            $table->string('sexe');
             $table->string('telephone')->nullable();
             $table->string('adresse')->nullable();
-            $table->string('email')->unique();
+            $table->text('historique_medical')->nullable();
+
+            $table->foreignId('user_id')
+                ->constrained('users')
+                ->onDelete('cascade');
+
             $table->timestamps();
         });
     }

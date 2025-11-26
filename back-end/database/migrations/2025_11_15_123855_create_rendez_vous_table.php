@@ -16,7 +16,8 @@ return new class extends Migration
             $table->foreignId('patient_id')->constrained()->onDelete('cascade');
             $table->foreignId('medecin_id')->constrained()->onDelete('cascade');
             $table->dateTime('date_heure');
-            $table->string('status')->default('en_attente');
+            $table->string('statut')->default('en_attente');
+            $table->text('notes')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('rendez_vouses');
+        Schema::dropIfExists('rendez_vous');
     }
 };
