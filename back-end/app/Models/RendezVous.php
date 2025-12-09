@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class RendezVous extends Model
 {
     use HasFactory;
+    protected $table = 'rendez_vous';
     protected $fillable = [
 
         'medecin_id',
@@ -16,6 +17,11 @@ class RendezVous extends Model
         'date_heure',
         'notes'
     ];
+
+    protected $casts = [
+        'date_heure' => 'datetime',
+    ];
+
 
     public function medecin()
     {

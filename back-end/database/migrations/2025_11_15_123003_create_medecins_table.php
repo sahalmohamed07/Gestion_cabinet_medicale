@@ -16,6 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('nom');
             $table->string('prenom');
+            $table->string('email')->unique();
             $table->string('telephone')->nullable();
 
             $table->foreignId('specialite_id')

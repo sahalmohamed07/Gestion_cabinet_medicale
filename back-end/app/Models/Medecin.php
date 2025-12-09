@@ -12,6 +12,7 @@ class Medecin extends Model
         'user_id',
         'nom',
         'prenom',
+        'email',
         'telephone',
         'specialite_id'
     ];
