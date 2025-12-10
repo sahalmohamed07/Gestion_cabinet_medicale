@@ -1,0 +1,87 @@
+<div class="wrapper">
+    <!-- Colonne gauche : infos docteur -->
+    <section class="left">
+        <div class="doctor-name">Dr Amina ABDI</div>
+        <div class="doctor-role">Médecin généraliste</div>
+        <div class="doctor-info">
+            Expérience : 8 ans<br>
+            Langues : Français, Arabe<br>
+            Lieu d’exercice : Cabinet Médical Al-Firdaws, Djibouti.
+            <br><br>
+            Le Dr Amina ABDI assure le suivi des patients adultes et enfants,
+            la prise en charge des pathologies courantes et le suivi des maladies chroniques.
+        </div>
+        <div class="tag-list">
+            <div class="tag">Médecine générale</div>
+            <div class="tag">Suivi chronique</div>
+            <div class="tag">Consultations adultes & enfants</div>
+        </div>
+    </section>
+
+    <!-- Colonne centrale : illustration de docteur intégrée -->
+    <section class="center">
+        <div class="doctor-photo">
+            <svg viewBox="0 0 210 260" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#E3F2FD"/>
+                        <stop offset="100%" stop-color="#BBDEFB"/>
+                    </linearGradient>
+                </defs>
+                <rect width="210" height="260" fill="url(#bg)"/>
+                <!-- tête -->
+                <circle cx="105" cy="70" r="45" fill="#FFE0B2"/>
+                <!-- cheveux -->
+                <path d="M60 70 Q105 15 150 70 Q145 40 130 30 Q115 22 95 24 Q75 28 63 45 Z" fill="#5D4037"/>
+                <!-- buste / blouse -->
+                <rect x="45" y="130" width="120" height="95" rx="26" fill="#FFFFFF"/>
+                <rect x="45" y="150" width="120" height="75" rx="26" fill="#E3F2FD"/>
+                <!-- col de la blouse -->
+                <path d="M75 130 L105 165 L135 130" fill="#FFFFFF"/>
+                <!-- stéthoscope simple -->
+                <path d="M80 135 C70 165 70 185 85 195" stroke="#1565C0" stroke-width="3" fill="none"/>
+                <path d="M130 135 C140 165 140 185 125 195" stroke="#1565C0" stroke-width="3" fill="none"/>
+                <circle cx="85" cy="197" r="6" fill="#FFFFFF" stroke="#1565C0" stroke-width="2"/>
+                <circle cx="125" cy="197" r="6" fill="#FFFFFF" stroke="#1565C0" stroke-width="2"/>
+                <!-- étiquette "Dr" -->
+                <rect x="65" y="205" width="80" height="30" rx="15" fill="#FFFFFF"/>
+                <text x="105" y="225" text-anchor="middle" font-size="15" fill="#1565C0" font-family="Poppins, Arial">Dr Amina</text>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Colonne droite : formulaire -->
+    <section class="right">
+        <div class="form-title">Prendre rendez-vous</div>
+        <form>
+            <div class="row-2">
+                <div class="form-group">
+                    <label for="date">Date du rendez-vous</label>
+                    <input type="date" id="date">
+                </div>
+                <div class="form-group">
+                    <label for="heure">Heure</label>
+                    <input type="time" id="heure">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="motif">Motif du rendez-vous</label>
+                <textarea id="motif" placeholder=""></textarea>
+            </div>
+
+            <div class="row-2">
+                <div class="form-group">
+                    <label for="nom">Nom & prénom</label>
+                    <input type="text" id="nom" placeholder="Nom du patient">
+                </div>
+                <div class="form-group">
+                    <label for="telephone">Téléphone</label>
+                    <input type="text" id="telephone" placeholder="Numéro de contact">
+                </div>
+            </div>
+
+            <button type="button" class="btn-primary">Enregistrer le rendez-vous</button>
+        </form>
+    </section>
+</div>
