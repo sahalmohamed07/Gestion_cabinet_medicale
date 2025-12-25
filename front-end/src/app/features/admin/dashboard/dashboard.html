@@ -1,0 +1,68 @@
+<!-- Header -->
+<div class="dashboard-header">
+  <h1>Tableau de bord Administrateur</h1>
+  <p>Vue globale de l’activité du Cabinet Médical Al-Firdaws</p>
+</div>
+
+<!-- Statistiques -->
+<div class="stats-grid">
+
+  <div class="stat-card">
+    <h3>Patients</h3>
+    <p class="stat-number">{{ stats.patients }}</p>
+    <span class="stat-desc">Patients enregistrés</span>
+  </div>
+
+  <div class="stat-card">
+    <h3>Médecins</h3>
+    <p class="stat-number">{{ stats.medecins }}</p>
+    <span class="stat-desc">Médecins actifs</span>
+  </div>
+
+  <div class="stat-card">
+    <h3>Rendez-vous du jour</h3>
+    <p class="stat-number">{{ stats.rendezvousToday }}</p>
+    <span class="stat-desc">Tous médecins</span>
+  </div>
+
+  <div class="stat-card warning">
+    <h3>En attente</h3>
+    <p class="stat-number">{{ stats.enAttente }}</p>
+    <span class="stat-desc">À confirmer</span>
+  </div>
+
+</div>
+
+<!-- Tableau -->
+<div class="dashboard-info">
+  <h2>Derniers rendez-vous</h2>
+
+  <table class="admin-table">
+    <thead>
+      <tr>
+        <th>Heure</th>
+        <th>Patient</th>
+        <th>Médecin</th>
+        <th>Motif</th>
+        <th>Statut</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let rdv of derniersRdv">
+        <td>{{ rdv.heure }}</td>
+        <td>{{ rdv.patient }}</td>
+        <td>{{ rdv.medecin }}</td>
+        <td>{{ rdv.motif }}</td>
+        <td
+          class="status"
+          [ngClass]="{
+            confirmed: rdv.statut === 'confirmé',
+            pending: rdv.statut === 'en_attente'
+          }"
+        >
+          {{ rdv.statut }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
