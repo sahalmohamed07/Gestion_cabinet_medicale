@@ -1,5 +1,11 @@
 FROM php:8.2-apache
 
+RUN a2dismod mpm_event mpm_worker || true \
+    && a2enmod mpm_prefork \
+    && a2enmod rewrite
+
+
+
 # Dépendances système
 RUN apt-get update && apt-get install -y \
     git zip unzip libpq-dev \
