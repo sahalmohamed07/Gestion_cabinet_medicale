@@ -30,4 +30,5 @@ RUN mkdir -p storage bootstrap/cache \
 
 EXPOSE 80
 
-CMD ["apache2-foreground"]
+CMD ["bash", "-c", "rm -f /etc/apache2/mods-enabled/mpm_*.load /etc/apache2/mods-enabled/mpm_*.conf && a2enmod mpm_prefork rewrite && apache2-foreground"]
+
