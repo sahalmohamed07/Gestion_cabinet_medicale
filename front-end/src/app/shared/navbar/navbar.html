@@ -1,0 +1,32 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="brand">
+      <div class="brand-icon">🏥</div>
+      <div class="brand-text">Cabinet <span>Al-Firdaws</span></div>
+    </div>
+
+    <nav class="nav-links">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        Accueil
+      </a>
+
+      <a routerLink="/services" routerLinkActive="active">Nos Services</a>
+      <a routerLink="/medecins" routerLinkActive="active">Nos Médecins</a>
+      <a routerLink="/contacts" routerLinkActive="active">Nos Contacts</a>
+
+      <!-- VISITEUR -->
+      <ng-container *ngIf="!(auth.currentUser$ | async)">
+        <a routerLink="/register" routerLinkActive="active">Inscription</a>
+        <a routerLink="/login" routerLinkActive="active">Connexion</a>
+      </ng-container>
+
+      <!-- CONNECTÉ -->
+      <ng-container *ngIf="auth.currentUser$ | async as user">
+        <a *ngIf="user.role === 'patient'" routerLink="/patient/rendezvous/nouveau">Prendre RDV</a>
+        <a *ngIf="user.role === 'medecin'" routerLink="/medecin/dashboard">Dashboard</a>
+        <a *ngIf="user.role === 'admin'" routerLink="/admin/dashboard">Admin</a>
+        <a (click)="logout()">Déconnexion</a>
+      </ng-container>
+    </nav>
+  </div>
+</div>

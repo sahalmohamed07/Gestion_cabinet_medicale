@@ -46,6 +46,30 @@ export class AuthService {
       );
   }
 
+  register(payload: {
+  nom: string;
+  prenom: string;
+  email: string;
+  password: string;
+  date_naissance: string;
+  sexe: 'M' | 'F';
+  telephone?: string;
+  adresse?: string;
+  historique_medical?: string;
+}) {
+  return this.http.post<any>(`${this.apiUrl}/register`, payload).pipe(
+    tap((res) => {
+      // auto-login après inscription (ton backend renvoie token + user)
+      if (res?.token && res?.user) {
+        localStorage.setItem('af_token', res.token);
+        localStorage.setItem('af_user', JSON.stringify(res.user));
+        this.currentUserSubject.next(res.user);
+      }
+    })
+  );
+}
+
+
   logout() {
     localStorage.removeItem('af_token');
     localStorage.removeItem('af_user');

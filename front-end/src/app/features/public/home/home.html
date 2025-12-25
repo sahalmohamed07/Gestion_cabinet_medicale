@@ -1,45 +1,80 @@
-<body>
+<section
+  class="hero"
+  [ngStyle]="{
+    'background-image':
+      'linear-gradient(to bottom, rgba(15,23,42,0.25), rgba(15,23,42,0.85)), url(' + currentSlide + ')'
+  }"
+>
+  <div class="hero-overlay"></div>
 
-<!-- NAVBAR -->
-<div class="navbar">
-    <div class="navbar-inner">
-        <div class="brand">
-            <div class="brand-icon">🏥</div>
-            <div class="brand-text">Cabinet <span>Al-Firdaws</span></div>
-        </div>
-        <nav class="nav-links">
-            <a href="#" class="active">Accueil</a>
-            <a href="#">Nos Services</a>
-            <a href="#">Nos Médecins</a>
-            <a href="#">Nos Contacts</a>
-            <a href="#">Inscription</a>
-            <a href="#">Connexion</a>
-        </nav>
+  <div class="hero-arrow left" (click)="prevSlide()">&#10094;</div>
+  <div class="hero-arrow right" (click)="nextSlide()">&#10095;</div>
+
+  <div class="hero-content">
+    <div class="hero-sub">BIENVENUE SUR LE SITE DU</div>
+    <div class="hero-title-line1">Cabinet Médical</div>
+    <div class="hero-title-line2">Al-Firdaws</div>
+
+    <div class="hero-actions">
+      <a routerLink="/patient/rendezvous/nouveau" class="btn-primary">
+        Prendre rendez-vous
+      </a>
+
+      <a routerLink="/services" class="btn-outline-light">
+        Découvrir nos services
+      </a>
     </div>
-</div>
-
-<!-- HERO -->
-<section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
-
-    <!-- flèches type slider -->
-    <div class="hero-arrow left">&#10094;</div>
-    <div class="hero-arrow right">&#10095;</div>
-
-    <div class="hero-content">
-        <div class="hero-sub">BIENVENUE SUR LE SITE DU</div>
-        <div class="hero-title-line1">Cabinet Médical</div>
-        <div class="hero-title-line2">Al-Firdaws</div>
-
-        <div class="hero-actions">
-            <button class="btn-primary">Prendre rendez-vous</button>
-            <button class="btn-outline-light">Découvrir nos services</button>
-        </div>
-    </div>
+  </div>
 </section>
 
-<!-- Bouton retour en haut -->
-<div class="scroll-top">↑</div>
+<section class="services">
+  <h2>Nos services</h2>
 
-</body>
+  <div class="services-grid">
+    <div class="service-card">
+      <h3>Consultation générale</h3>
+      <p>Suivi médical, diagnostic et orientation.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Suivi spécialisé</h3>
+      <p>Prise en charge des maladies chroniques.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Rendez-vous en ligne</h3>
+      <p>Planifiez vos consultations facilement.</p>
+    </div>
+  </div>
+</section>
+
+<section class="doctors">
+  <h2 class="section-title">Nos Médecins</h2>
+
+  <div class="doctors-grid">
+    <div class="doctor-card">
+      <img class="doctor-photo" src="/images/s5.jpg" alt="Dr Amina Ali">
+      <h3>Dr Amina Ali</h3>
+      <p>Médecin généraliste</p>
+    </div>
+
+    <div class="doctor-card">
+      <img class="doctor-photo" src="/images/s4.jpg" alt="Dr Omar Hassan">
+      <h3>Dr Omar Hassan</h3>
+      <p>Médecin interne</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="cta">
+  <h2>Besoin d’un rendez-vous ?</h2>
+  <p>Créez votre compte et planifiez votre consultation en ligne.</p>
+
+  <div class="cta-actions">
+    <a routerLink="/register" class="btn-primary">Créer un compte</a>
+    <a routerLink="/login" class="btn-outline">Se connecter</a>
+  </div>
+</section>
+
+<div class="scroll-top" (click)="scrollToTop()">↑</div>

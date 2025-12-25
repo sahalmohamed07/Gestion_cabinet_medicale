@@ -1,11 +1,11 @@
-﻿import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-prendre-rdv',
-  standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './prendre-rdv.html',
   styleUrl: './prendre-rdv.css',
 })
-export class PrendreRdv {}
+export class PrendreRdv {
+
+}

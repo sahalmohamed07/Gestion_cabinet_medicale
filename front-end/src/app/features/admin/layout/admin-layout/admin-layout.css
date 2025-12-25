@@ -1,0 +1,10 @@
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.admin-main {
+  flex: 1;
+  background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
+  padding: 40px 30px;
+}

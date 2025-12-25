@@ -1,77 +1,86 @@
-<div class="layout">
+<div class="register-page">
+  <div class="layout">
+
     <!-- Présentation à gauche -->
     <section class="brand-side">
-        <div class="brand-logo">
-            <span>AF</span>Cabinet Médical Al-Firdaws
-        </div>
-        <div class="brand-sub">Portail d’inscription des patients.</div>
-        <p class="brand-text">
-            Cet écran permet à un patient de créer un compte afin de prendre des rendez-vous en ligne,
-            consulter ses prochains passages au cabinet et suivre l’historique de ses consultations.
-        </p>
+      <div class="brand-logo">
+        <span>AF</span>Cabinet Médical Al-Firdaws
+      </div>
+      <div class="brand-sub">Portail d’inscription des patients.</div>
+      <p class="brand-text">
+        Cet écran permet à un patient de créer un compte afin de prendre des rendez-vous en ligne,
+        consulter ses prochains passages au cabinet et suivre l’historique de ses consultations.
+      </p>
     </section>
 
-    <!-- Formulaire d'inscription -->
+    <!-- Carte inscription -->
     <section class="auth-card">
-        <h1 class="auth-title">Inscription</h1>
-        <p class="auth-subtitle">
-            Créez votre compte patient pour accéder aux services en ligne du Cabinet Médical Al-Firdaws.
+      <h1 class="auth-title">Inscription</h1>
+      <p class="auth-subtitle">
+        Créez votre compte patient pour accéder aux services en ligne du Cabinet Médical Al-Firdaws.
+      </p>
+
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label>Prénom</label>
+            <input type="text" formControlName="prenom" placeholder="Ex : Amina">
+          </div>
+          <div class="form-group">
+            <label>Nom</label>
+            <input type="text" formControlName="nom" placeholder="Ex : ABDI">
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label>Date de naissance</label>
+            <input type="date" formControlName="date_naissance">
+          </div>
+          <div class="form-group">
+            <label>Téléphone</label>
+            <input type="text" formControlName="telephone" placeholder="+253 XX XX XX XX">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Adresse e-mail</label>
+          <input type="email" formControlName="email" placeholder="patient@alfirdaws.com">
+        </div>
+
+        <div class="form-group">
+          <label>Adresse</label>
+          <input type="text" formControlName="adresse" placeholder="Quartier, ville">
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label>Mot de passe</label>
+            <input type="password" formControlName="password" placeholder="••••••••">
+          </div>
+          <div class="form-group">
+            <label>Confirmer le mot de passe</label>
+            <input type="password" formControlName="confirm_password" placeholder="Répétez le mot de passe">
+          </div>
+        </div>
+
+        <p class="form-note">
+          Les informations saisies sont utilisées uniquement pour la gestion de vos rendez-vous
+          et de votre dossier patient au sein du cabinet.
         </p>
 
-        <form>
-            <div class="form-row-2">
-                <div class="form-group">
-                    <label for="prenom">Prénom</label>
-                    <input type="text" id="prenom" placeholder="Ex : Amina">
-                </div>
-                <div class="form-group">
-                    <label for="nom">Nom</label>
-                    <input type="text" id="nom" placeholder="Ex : ABDI">
-                </div>
-            </div>
+        <button type="submit" class="btn-primary">
+          Créer mon compte
+        </button>
 
-            <div class="form-row-2">
-                <div class="form-group">
-                    <label for="date_naissance">Date de naissance</label>
-                    <input type="date" id="date_naissance">
-                </div>
-                <div class="form-group">
-                    <label for="telephone">Téléphone</label>
-                    <input type="text" id="telephone" placeholder="Ex : +253 XX XX XX XX">
-                </div>
-            </div>
+        <div class="auth-footer">
+          Vous avez déjà un compte ?
+          <a routerLink="/login">Se connecter</a>
+        </div>
 
-            <div class="form-group">
-                <label for="email">Adresse e-mail</label>
-                <input type="email" id="email" placeholder="ex : patient@alfirdaws.com">
-            </div>
-
-            <div class="form-group">
-                <label for="adresse">Adresse</label>
-                <input type="text" id="adresse" placeholder="Quartier, ville">
-            </div>
-
-            <div class="form-row-2">
-                <div class="form-group">
-                    <label for="password">Mot de passe</label>
-                    <input type="password" id="password" placeholder="••••••••">
-                </div>
-                <div class="form-group">
-                    <label for="confirm_password">Confirmer le mot de passe</label>
-                    <input type="password" id="confirm_password" placeholder="Répétez le mot de passe">
-                </div>
-            </div>
-
-            <p class="form-note">
-                Les informations saisies sont utilisées uniquement pour la gestion de vos rendez-vous
-                et de votre dossier patient au sein du cabinet.
-            </p>
-
-            <button type="button" class="btn-primary">Créer mon compte</button>
-
-            <div class="auth-footer">
-                Vous avez déjà un compte ? <a href="#">Se connecter</a>
-            </div>
-        </form>
+      </form>
     </section>
+
+  </div>
 </div>

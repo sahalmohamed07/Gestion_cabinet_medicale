@@ -1,11 +1,11 @@
-﻿import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-rendezvous-planning',
-  standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './rendezvous-planning.html',
   styleUrl: './rendezvous-planning.css',
 })
-export class RendezvousPlanning {}
+export class RendezvousPlanning {
+
+}
